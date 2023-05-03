@@ -1,0 +1,23 @@
+{
+    "manifest_version":3,
+    "name": "Flask_api_example",
+    "version":"1.0",
+    "description":"Classification",
+    "action":{
+        "default_popup":"popup.html",
+        "default_title":"Helper"
+    },
+    "background":{
+        "service_worker":"eventPage.js"
+    },
+    "content_scripts":[
+        {
+            "matches":["https://www.yahoo.com/*"],
+            "js":["contentdiscussionform.js"]
+        }
+        
+    ],
+    "permissions":["storage","tabs", "activeTab", "declarativeContent", "identity", "cookies", "contextMenus"],
+    "host_permissions": ["https://www.yahoo.com/*"]
+    
+}
